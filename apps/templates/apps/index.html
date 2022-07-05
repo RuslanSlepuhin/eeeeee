@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>end-points:</title>
+</head>
+<body>
+    <h1>END POINTS:</h1>
+    <h4>Create a new user</h4>
+        <p>http://127.0.0.1:8000/auth/users/</p>
+        <p>POST request params:</p>
+        <P>
+            {<br>
+                "username": "ruslan",<br>
+                "email": "omsinfo@yandex.ru",<br>
+                "password": "12345OMS",<br>
+                "re_password": "12345OMS"<br>
+            }
+        </p>
+
+    <h4>Verify user by email</h4>
+        <p>http://127.0.0.1:8000/auth/users/activation/</p>
+        <p>POST request params:</p>
+        <P>
+            {<br>
+                "token": "b830v2-8c6f502bcee65393c6d4a92a113926cd",<br>
+                "uid": "NQ"<br>
+            }
+        </p>
+
+    <h4>Authorization user</h4>
+        <p>http://127.0.0.1:8000/auth/jwt/create/</p>
+        <p>POST request params:</p>
+        <P>
+            {<br>
+                "email": "omsinfo@yandex.ru",<br>
+                "password": "12345OMS"<br>
+            }
+        </p>
+
+    <h4>Get access token from refresh</h4>
+        <p>http://127.0.0.1:8000/auth/jwt/refresh/</p>
+        <p>POST request params:</p>
+        <P>
+            {<br>
+                "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY1OTU5NDU3MiwianRpIjoiYWY2MGM1ZGQ5NDdmNDkxNTlmMjUyMjFiM2JkMTY3OTYiLCJ1c2VyX2lkIjo1fQ.HDkZ0o1IwFKwzhiA-UO2K-5uRRygPdGL-WsQSPkRRow"<br>
+            }
+        </p>
+
+    <h4>Reset password</h4>
+        <p>http://127.0.0.1:8000/auth/users/reset_password/</p>
+        <p>POST request params:</p>
+        <P>
+            {<br>
+                "email": "omsinfo@yandex.ru"<br>
+            }
+        </p>
+
+    <h4>Set new password</h4>
+        <p>http://127.0.0.1:8000/auth/users/reset_password_confirm/</p>
+        <p>POST request params:</p>
+        <P>
+            {<br>
+                "uid": "NQ",<br>
+                "token": "b8315w-e9777155f7e6b5e75eb1ca19bfd32392",<br>
+                "new_password": "automobile1902",<br>
+                "re_new_password": "automobile1902"<br>
+            }
+        </p>
+
+</body>
+</html>
